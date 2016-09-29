@@ -1,0 +1,22 @@
+{
+  "id": "My Object",
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "name": {
+      "type": "object",
+      "properties": {
+        "firstName": {"type": "string"},
+        "lastName": {"type": "string"}
+      }
+    },
+    "status": {
+      "enum": ["online", "offline"]
+    }
+  }
+}
