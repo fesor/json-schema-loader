@@ -224,7 +224,9 @@ class MsonToSchemaTransformer
                 if (!in_array($value, $enum, true)) $enum[] = $value;
 
                 return $enum;
-            }, [])
+            }, []),
+            'default' => !empty($element['attributes']['default']) ?
+                $this->sample($element['attributes']['default'][0]) : null,
         ];
     }
 

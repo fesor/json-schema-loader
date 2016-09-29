@@ -1,0 +1,5 @@
+{
+  "id": "My Enum",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\n",
+  "enum": [1, 2, 3]
+}

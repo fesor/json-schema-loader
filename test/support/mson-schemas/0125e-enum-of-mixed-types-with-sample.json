@@ -1,0 +1,4 @@
+{
+  "id": "My Enum",
+  "enum": ["foo", ["1", "2", "3"], 1, {"firstName": "František", "lastName": "Novák"}, true, "bar", "baz"]
+}

@@ -1,0 +1,7 @@
+{
+  "id": "My Enum",
+  "enum": [
+    {"firstName": "František", "lastName": "Novák"},
+    {"name": "František Novák"}
+  ]
+}

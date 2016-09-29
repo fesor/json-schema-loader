@@ -1,0 +1,4 @@
+{
+  "id": "My Enum",
+  "enum": [true, "online", 1]
+}
