@@ -1,0 +1,38 @@
+{
+    "name": "fesor/json_schema_loader",
+    "description": "Loads Json Schema from different sources",
+    "type": "library",
+    "require": {
+        "justinrainbow/json-schema": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.5",
+        "apiary/mson-zoo": "^3.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fesor\\JsonSchemaLoader\\": "src/"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sergey Protko",
+            "email": "fesors@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "apiary/mson-zoo",
+                "version": "3.0.0",
+                "dist": {
+                    "url": "https://github.com/apiaryio/mson-zoo/archive/6e074a7d87bb26d398a5eba7c15b623c8f63cbe4.zip",
+                    "type": "zip"
+                }
+            }
+        }
+    ]
+}

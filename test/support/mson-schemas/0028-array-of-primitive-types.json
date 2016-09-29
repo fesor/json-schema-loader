@@ -1,0 +1,7 @@
+{
+  "id": "My Array",
+  "type": "array",
+  "items": {
+    "type": "string"
+  }
+}

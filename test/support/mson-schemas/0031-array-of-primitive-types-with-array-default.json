@@ -1,0 +1,8 @@
+{
+  "id": "My Array",
+  "type": "array",
+  "items": {
+    "type": "string"
+  },
+  "default": ["Lorem ipsum", "Isamet pidet"]
+}

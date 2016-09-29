@@ -1,0 +1,14 @@
+{
+  "id": "My Object",
+  "type": "object",
+  "properties": {
+    "firstName": {
+      "type": "string",
+      "default": "František"
+    },
+    "lastName": {
+      "type": "string",
+      "default": "Polášek"
+    }
+  }
+}

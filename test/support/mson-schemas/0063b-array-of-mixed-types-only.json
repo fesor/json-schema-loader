@@ -1,0 +1,12 @@
+{
+  "id": "My Array",
+  "type": "array",
+  "items": {
+    "oneOf": [
+      {"type": "object"},
+      {"enum": []},
+      {"type": "array"},
+      {"type": "string"}
+    ]
+  }
+}
