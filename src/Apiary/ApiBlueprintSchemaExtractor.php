@@ -4,21 +4,26 @@ namespace Fesor\JsonSchemaLoader\Apiary;
 
 use Fesor\JsonSchemaLoader\SchemaAssembler;
 
-class MsonTypeExtractor
+class ApiBlueprintSchemaExtractor
 {
     private $schemaTransformer;
+
+    private $parser;
 
     /**
      * MsonTypeExtractor constructor.
      * @param MsonToSchemaTransformer $schemaTransformer
+     * @param ApiBlueprintParser $parser
      */
-    public function __construct(MsonToSchemaTransformer $schemaTransformer)
+    public function __construct(MsonToSchemaTransformer $schemaTransformer, ApiBlueprintParser $parser)
     {
         $this->schemaTransformer = $schemaTransformer;
+        $this->parser = $parser;
     }
 
-    public function extractTypes(array $ast, SchemaAssembler $assembler)
+    public function extractTypes($apiBlueprint, SchemaAssembler $assembler)
     {
+        $ast = $this->parser->parse($apiBlueprint);
         $dataStructures = $this->collectDataStructures($ast['ast']);
         $this->processDataStructures($dataStructures, $assembler);
     }
