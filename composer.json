@@ -3,7 +3,8 @@
     "description": "Loads Json Schema from different sources",
     "type": "library",
     "require": {
-        "justinrainbow/json-schema": "^3.0"
+        "justinrainbow/json-schema": "^3.0",
+        "guzzlehttp/guzzle": "^6.2"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.5",
