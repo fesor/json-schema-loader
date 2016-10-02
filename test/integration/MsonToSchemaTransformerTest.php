@@ -19,7 +19,7 @@ class MsonToSchemaTransformerTest extends \PHPUnit\Framework\TestCase
      */
     public function testMsonToSchemaTranformer($jsonSchema, $msonParsed, $fileName)
     {
-        $transformedShema = $this->transformer->transform($msonParsed);
+        $transformedShema = $this->transformer->transform($msonParsed, function () {});
 
         $this->assertEquals(
             $jsonSchema,

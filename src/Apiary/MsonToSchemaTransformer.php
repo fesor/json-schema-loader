@@ -11,14 +11,18 @@ namespace Fesor\JsonSchemaLoader\Apiary;
  */
 class MsonToSchemaTransformer
 {
+    /** @var  callable ref expander */
+    private $refExpander;
+
     /**
      * Transform MSON element into json schema
      *
      * @param array $mson ast
      * @return array representing json schema
      */
-    public function transform(array $mson)
+    public function transform(array $mson, callable $refExpander)
     {
+        $this->refExpander = $refExpander;
         $schema = [];
         $element = $mson[0];
         if (isset($element['meta']['id'])) {
@@ -48,8 +52,13 @@ class MsonToSchemaTransformer
             case 'enum':
                 $schema = $this->transformEnum($element, $isFixed);
                 break;
-            default:
+            case 'string':
+            case 'number':
+            case 'boolean':
                 $schema = $this->tranformScalar($element, $isFixed);
+                break;
+            default:
+                $schema = $this->transformRef($element, $this->refExpander);
                 break;
         }
 
@@ -191,8 +200,7 @@ class MsonToSchemaTransformer
 
     private function tranformScalar(array $element, $isFixed)
     {
-        $schema = [
-        ];
+        $schema = [];
 
         if (isset($element['attributes']['default'])) {
             $schema['default'] = $element['attributes']['default'];
@@ -203,6 +211,14 @@ class MsonToSchemaTransformer
         }
 
         return $schema;
+    }
+
+    private function transformRef(array $element, callable $refExpander)
+    {
+        return [
+            'type' => null,
+            '$ref' => $refExpander($element['element'])
+        ];
     }
 
     private function transformEnum(array $element, $isFixed)

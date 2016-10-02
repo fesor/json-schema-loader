@@ -9,3 +9,16 @@ Until release of 1.0 version only ApiBlueprint and Apiary will be supported, but
 available in later releases.
 
 **Note**: This package in heavily development phase.
+
+## Usage
+
+This library currently provides bridge only for [justinrainbow/json-schema](https://github.com/justinrainbow/json-schema).
+
+To use schemas from different sources just specify custom retriaver:
+
+```
+
+$retriaver = new \JsonSchema\Uri\UriRetriever();
+$retriaver->setUriRetriever($loader);
+$schema = $retriaver->retrieve('file://'.__DIR__.'/example.apib#definitions/SomeDataStructure');
+```
