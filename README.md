@@ -16,9 +16,11 @@ This library currently provides bridge only for [justinrainbow/json-schema](http
 
 To use schemas from different sources just specify custom retriaver:
 
-```
-
+```php
 $retriaver = new \JsonSchema\Uri\UriRetriever();
 $retriaver->setUriRetriever($loader);
+# Load json schema from api blueprint file
 $schema = $retriaver->retrieve('file://'.__DIR__.'/example.apib#definitions/SomeDataStructure');
+# Or dirrectly from apiary
+$schema = $retriaver->retrieve('apiary://example-project#definitions/SomeDataStructure');
 ```
